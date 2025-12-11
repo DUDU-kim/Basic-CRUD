@@ -20,7 +20,7 @@ Demo : http://13.239.60.163/project/
 <ul>
   <li>Node.js</li>
   <li>Express</li>
-  <li>Restful API架構</li>
+  <li>RESTful API架構</li>
 </ul>
 
 > **資料庫**
