@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  /* background: linear-gradient(to bottom, #23237d, #414179); 淺紫色到淺藍色漸變 */
+  background-color: rgb(19, 31, 47);
+  color: white;
+  display: flex;
+  flex-direction: row; /*預設方向是水平，寫不寫都可*/
+  min-height: 100vh; /* 確保螢幕高度佔滿 */
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  font-family: sans-serif;
+}
+
+.wrapper {
+   width: 75%;
+   max-width: 35rem; /* 設定最大寬度 */
+   padding: 2rem;
+   background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+   border-radius: 1.5rem;
+   text-align: center;
+}
+
+
+.h1-login{
+    color: rgb(13 148 136 / var(--tw-bg-opacity, 1));
+}
+.google-button {
+    width: 100%;
+    display: flex;  /* 要有這個， 不然圖片會在字的左上角 */
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(13 148 136 / var(--tw-bg-opacity, 1));
+    background-color: rgb(31 41 55);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    font-size: 1rem;
+    
+}
+.google-button:hover {
+    background-color: #303a4e;
+}
+.google-logo-img {
+    width: 1.25rem; 
+    height: 1.25rem;  
+}
+
+
+
+
+.divider-content {
+   display: flex; 
+   align-items: center;
+   width: 100%;
+   margin-top: 2rem;
+   gap: 0.5rem;
+   color: #7f849a;
+}
+.divider-left-line, .divider-right-line{
+    flex-grow: 1;
+    border: none;
+    height: 1px; 
+    background-color: #7f849a;
+}
+.divider-text {
+    font-size: 1rem; 
+}
+
+
+
+.account {
+    margin-top: 1rem;
+
+}
+.p-email, .p-password {
+    display: flex;
+}
+.email, .password {
+    display: flex;
+    width: 100%;
+    height: 2.4rem;
+    margin-top: 0.3rem;
+    border-radius: 0.5rem;
+    border: 1px solid #6b7280; /* 確保邊框與背景色一致 (讓它看起來沒有邊框) */
+    padding-left: 0.5rem;
+    font-size: 1rem; 
+    background-color: #4b5563;
+    color: white;
+    caret-color: white; /* 游標顏色 */
+}
+.email:focus, .password:focus {
+    outline: none; 
+    outline: 1px solid rgb(13 148 136 / var(--tw-bg-opacity, 1)); 
+}
+input::placeholder {
+    color: #9ca3af; 
+}
+
+
+
+.remem-forgot-content {
+    display: flex;
+    margin-top: 0.7rem; 
+}
+.rememberme > input {
+    margin-right: 0.5rem; 
+}
+/* 佔據所有剩餘空間，將左右元素推開 */
+.flex-spacer {
+    /* 確保螢幕縮到最小時，若文字都不換行，最左及最右元件會定格在原位 */
+    flex-grow: 1; 
+}
+.forgot-password {
+    /* color: #2e9cc4; */
+    color: rgb(13 148 136 / var(--tw-bg-opacity, 1));
+    text-decoration: none;
+}
+
+
+
+.login-button {
+    width: 100%;
+    /* display: flex; 
+    align-items: center;
+    justify-content: center; */
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    /* border: 1px solid #7878d5;  */
+    /* background-color: #7878d5; */
+    border: 0px solid rgb(13 148 136 / var(--tw-bg-opacity, 1));
+    background-color: rgb(13 148 136 / var(--tw-bg-opacity, 1));
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.15s; 
+    font-size: 1rem;
+}
+.login-button:hover {
+    background-color: rgb(10 120 110 / var(--tw-bg-opacity, 1));
+}
+
+.del-acc-button {
+    width: 100%;
+    /* display: flex; 
+    align-items: center;
+    justify-content: center; */
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    /* border: 1px solid #7878d5;  */
+    /* background-color: #7878d5; */
+    border: 0px solid #B22222;
+    background-color: #B22222;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.15s; 
+    font-size: 1rem;
+}
+.del-acc-button:hover {
+    background-color: #8B0000;
+}
+
+
+.signup-content {
+    margin-top: 1.5rem;
+    color: #7f849a;
+}
+.signup {
+    /* color: #2e9cc4; */
+    color: rgb(13 148 136 / var(--tw-bg-opacity, 1));
+    text-decoration: none;
+}

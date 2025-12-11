@@ -1,0 +1,235 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: rgb(19, 31, 47);;
+}
+
+body h1 {
+    color: #f9f9f9;
+}
+
+.header-container {
+    display: flex; 
+    justify-content: space-between; /* 讓 h1 和按鈕分開到兩側 */
+    align-items: center; 
+    max-width: 100%; 
+    margin: 20px auto;
+}
+
+.main-container p {
+    color: rgb(158, 219, 98);
+    font-weight: bold;
+}
+
+.open-cart-btn {
+    background-color: #934280;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 17px;
+    /* 讓它看起來更像一個浮動按鈕 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); 
+}
+
+/* 確保 h1 居中 */
+.header-container h1 {
+    margin: 0; /* 移除 h1 的預設 margin */
+    /* 這裡可以選擇是否讓 h1 獨立居中，如果需要 h1 依然在頁面正中間：
+    width: 100%;
+    text-align: center;
+    */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    flex-grow: 1; /* 讓網格填滿所有可用空間 */
+    min-width: 0; /* 避免擠壓時內容溢出 */
+}
+
+.product-card {
+    border: 2px solid #fff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    background-color: #008080;
+    white-space: nowrap;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+.add-to-cart {
+    background-color: #934280;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+.cart-sidebar {
+    width: 0; /* 初始寬度為 0，隱藏起來 */
+    background-color: rgb(194, 191, 191);
+    color: black;
+    box-shadow: none; /* 移除陰影，因為它現在是內容的一部分 */
+    padding: 0; /* 初始 padding 為 0 */
+    overflow: hidden; /* 隱藏內容 */
+    transition: right 0.3s, padding 0.3s;
+    min-height: 100vh; /* 確保側邊欄佔用整個可視高度 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* main-container 讓內容和側邊欄並排 */
+.main-container {
+    display: flex;
+    gap: 20px; /* 內容和側邊欄之間的間距 */
+}
+
+
+.cart-sidebar.active {
+    width: 400px; /* 顯示時的寬度 */
+    padding: 20px; /* 顯示時的 padding */
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2); /* 顯示時重新添加陰影 */
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+
+.cart-total {
+    display: flex;
+    border-bottom: 1px solid black; /* 加一條線強調總計 */
+    justify-content: space-between; /* 讓 h1 和按鈕分開到兩側 */
+    align-items: center;
+}
+.confirm-button {
+    margin-bottom: 5px;
+    border-radius: 3px;
+    padding: 5px 5px;
+    border: none;
+    font-weight: bold;
+    background-color: darkgoldenrod;
+    cursor: pointer;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: rgb(181, 17, 17);
+}
+
+.cart-hr {
+    margin: 0; 
+    /* 1. 移除瀏覽器的預設邊框和陰影 */
+    border: none;
+    /* 2. 設置高度，使其可見 */
+    height: 1px; /* 你想要的線條厚度 */
+    background-color: black;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    /* flex-grow: 1; 如果要讓Total字樣在最下面*/ 
+    overflow-y: auto;
+}
+
+.cart-item { /* 透過js新增的元素, 而非html*/
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #934280;
+    border-radius: 4px;
+}
+
+.cart-item div {
+    flex-grow: 1;
+}
+.cart-item span { 
+    margin-top: 3px;
+}
+.cart-item span:nth-child(2) { /* li.innerHTML的第四個元素 */
+    margin-left: 10px;
+    color: rgb(158, 219, 98);
+    font-weight: bold;
+}
+.cart-item span:nth-child(4) { /* li.innerHTML的第四個元素 */
+    /* 確保所有文字為白色 */
+    color: white;
+    font-weight: bold;
+}
+.cart-item button {
+    margin-left: 10px;
+}
+
+
+
+
+
+
+/* 當螢幕寬度小於或等於 1000px 時 */
+@media (max-width: 1500px) {
+    /* 讓產品網格變成單欄排列 */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* 為了確保商品卡片在單欄下寬度合適，可能需要調整父容器的間距 */
+    .main-container {
+        /* 在螢幕較窄時，移除側邊欄和商品列表之間的間距 */
+        gap: 20px; 
+    }
+
+    /* 讓購物車項目內的元素具備響應式能力 */
+    .cart-item span {
+        /* 允許名稱縮小，但我們會在下面的規則中覆寫第一和第二個 span */
+        flex-shrink: 1; 
+    }
+
+    /* 針對第一個 span (商品名稱)：讓它佔滿剩餘空間，但溢出時截斷 */
+    .cart-item span:first-child {
+        flex-grow: 1; /* 優先佔滿空間 */
+        flex-shrink: 1; /* 允許被壓縮 */
+        
+        /* 溢出時顯示省略符號的關鍵三件套 */
+        overflow: hidden; 
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        
+        /* 設定一個最大寬度，為後面的價格、數量和按鈕保留空間 */
+        max-width: 55%; 
+        margin-right: 5px; /* 增加與價格的間距 */
+    }
+
+    /* 針對價格、數量和移除按鈕：強制它們不被壓縮 */
+    .cart-item span:nth-child(2), /* 價格 ($XX.XX) */
+    .cart-item span:nth-child(3), /* 佔位的div */
+    .cart-item span:nth-child(4), /* 數量 (xN) */
+    .cart-item button {
+        flex-shrink: 0; /* 設為 0，防止被 Flexbox 壓縮 */
+        margin-left: 10px; /* 在元素之間增加間距 */
+    }
+}

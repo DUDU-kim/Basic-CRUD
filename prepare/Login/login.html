@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In</title>
+    <link rel="stylesheet" href="/prepare/Login/login.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="h1-login">Log In</h1>
+      <form class="create-form">
+        <!-- Continue with Google -->
+        <button type="button" class="google-button">
+          <img
+            src="/prepare/Login/assets/google-logo.png"
+            alt="Google Logo"
+            class="google-logo-img"
+          />
+          <span>Continue with Google</span>
+        </button>
+
+        <!-- 分割線 -->
+        <div class="divider-wrapper">
+          <div class="divider-content">
+            <hr class="divider-left-line" />
+            <span class="divider-text"> Or log in with </span>
+            <hr class="divider-right-line" />
+          </div>
+        </div>
+
+        <!-- 帳號、密碼輸入框 -->
+        <form>
+          <div class="account">
+            <!-- <p></p> 用p可以自動換行 -->
+            <p class="p-email">Email</p>
+            <input
+              class="email"
+              type="text"
+              placeholder="xxx@example.com"
+            /><br />
+            <p class="p-password">Password</p>
+            <input class="password" type="text" placeholder="Your password" />
+          </div>
+        </form>
+
+        <!-- 記住密碼，用label可以擴大點擊範圍(包含記住密碼也可點擊) -->
+
+        <div class="remem-forgot-content">
+          <label class="rememberme">
+            <input type="checkbox" name="interests" value="value" />Remember me
+          </label>
+          <div class="flex-spacer"></div>
+          <a class="forgot-password" href="/prepare/Forgotpw/forgotpw.html"
+            >Forgot your password ?</a
+          >
+        </div>
+
+        <!-- login-button -->
+        <button class="login-button" type="button">Log in</button>
+        <button class="del-acc-button" type="button" 
+        onclick="window.location.href='/prepare/DeleteAccount/delacc.html';">Delete Account</button>
+
+        <!-- signup -->
+        <div class="signup-content">
+          <span>Don't have an account?</span>
+          <a class="signup" href="/prepare/Signup/signup.html">Sign up</a>
+        </div>
+      </form>
+    </div>
+
+    <script src="/prepare/Login/login.js"></script>
+  </body>
+</html>

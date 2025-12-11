@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In</title>
+    <link rel="stylesheet" href="/prepare/Signup/signup.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <div class="header-content">
+        <button class="back-button" type="button" onclick="history.back()">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 19-7-7 7-7"/>
+                <path d="M19 12H5"/>
+            </svg>
+        </button>
+        <h1 class="h1-login">Sign Up</h1>
+        <!-- 右側：佔位元素 (Placeholder) -->
+        <!-- 這個元素確保標題被推到畫面的中央，平衡左側按鈕的空間 -->
+        <div class="placeholder"></div> 
+      </div>
+      
+
+      <!-- 註冊 -->
+      <form>
+        <div class="sign-account">
+          <!-- <p></p> 用p可以自動換行 -->
+          <p class="p-name">Full Name</p>
+          <input class="name" type="text" placeholder="Full Name" /><br />
+          <p class="p-age">Age</p>
+          <input class="age" type="text" placeholder="Age" /><br />
+          <p class="p-email">Email</p>
+          <input
+            class="email"
+            type="text"
+            placeholder="xxx@example.com"
+          /><br />
+          <p class="p-password">Password</p>
+          <input class="password" type="text" placeholder="Your password" /><br />
+          <p class="p-sex">M / F</p>
+          <input class="sex" type="text" placeholder="M:male / F:female" />
+        </div>
+      </form>
+
+      <!-- sign-button -->
+      <button class="sign-button" type="button">Create Account</button>
+
+    </div>
+
+    <script src="/prepare/Signup/signup.js"></script>
+  </body>
+</html>

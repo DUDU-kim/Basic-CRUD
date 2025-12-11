@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  /* background: linear-gradient(to bottom, #23237d, #414179); 淺紫色到淺藍色漸變 */
+  background-color: rgb(19, 31, 47);
+  color: white;
+  display: flex;
+  flex-direction: row; /*預設方向是水平，寫不寫都可*/
+  min-height: 100vh; /* 確保螢幕高度佔滿 */
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  font-family: sans-serif;
+}
+
+.wrapper {
+   width: 100%;
+   max-width: 30rem; /* 設定最大寬度 */
+   padding: 2rem;
+   background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+   border-radius: 1.5rem;
+   text-align: center;
+}
+
+
+.header-content {
+    display: flex;
+    align-items: center;
+    /* 使用 space-between 讓左側按鈕和右側佔位符最大程度分開 */
+    justify-content: space-between; 
+    width: 100%; /* 佔滿父容器寬度 */
+    max-width: 25rem; /* 限制內容寬度，模擬手機介面 */
+    position: relative; /* 確保子元素定位正確 */
+}
+/* 上一頁按鈕樣式：白色、圓角、觸碰效果 */
+.back-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 8px; /* 擴大點擊區域 */
+    
+    /* 將按鈕本身設置為白色，讓 SVG 繼承 */
+    color: white; 
+    
+    /* 讓 SVG 顏色繼承自此處 */
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+/* 觸碰時的透明圈圈效果 */
+.back-button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* 10% 透明度的白色背景 */
+    border-radius: 50%; /* 形成圓形 */
+}
+/* SVG 圖標樣式 */
+.icon {
+    width: 24px;
+    height: 24px;
+    /* 讓 SVG 的描邊顏色繼承自父元素的 color (back-button) */
+    stroke: currentColor; 
+}
+/* 標題居中 */
+.h1-login {
+    font-size: 1.8rem;
+    /* 讓標題位於中間，並忽略按鈕的寬度 */
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0; /* 移除可能影響居中的預設 margin */
+    color: rgb(13 148 136 / var(--tw-bg-opacity, 1));
+}
+
+/* 用來平衡左側按鈕寬度的佔位元素 */
+.placeholder {
+    /* 寬度設置為按鈕的寬度 + padding/margin (這裡設置為按鈕的視覺寬度) */
+    width: 40px; 
+    height: 1px;
+    visibility: hidden;
+}
+
+
+
+.sign-account {
+    margin-top: 1rem;
+}
+.p-name, .p-age, .p-email, .p-password, .p-sex {
+    display: flex;
+}
+.name, .age, .email, .password, .sex {
+    display: flex;
+    width: 100%;
+    height: 2.4rem;
+    margin-top: 0.3rem;
+    border-radius: 0.5rem;
+    border: 1px solid #6b7280; /* 確保邊框與背景色一致 (讓它看起來沒有邊框) */
+    padding-left: 0.5rem;
+    font-size: 1rem; 
+    background-color: #4b5563;
+    color: white;
+    caret-color: white; /* 游標顏色 */
+}
+.name:focus, .age:focus, .email:focus, .password:focus, .sex:focus {
+    outline: none; 
+    outline: 1px solid rgb(13 148 136 / var(--tw-bg-opacity, 1)); 
+}
+input::placeholder {
+    color: #9ca3af; 
+}
+
+
+
+.agree-content {
+    display: flex;
+    margin-top: 0.7rem; 
+}
+.agree > input {
+    margin-right: 0.5rem; 
+}
+
+
+
+.sign-button {
+    width: 100%;
+    /* display: flex; 
+    align-items: center;
+    justify-content: center; */
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    /* border: 1px solid #7878d5;  */
+    /* background-color: #7878d5; */
+    border: 0px solid rgb(13 148 136 / var(--tw-bg-opacity, 1));
+    background-color: rgb(13 148 136 / var(--tw-bg-opacity, 1));
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.15s; 
+    font-size: 1rem;
+}
+.sign-button:hover {
+    background-color: rgb(10 120 110 / var(--tw-bg-opacity, 1));
+}
