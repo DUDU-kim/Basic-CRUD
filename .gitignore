@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 .npm
-db.js
+/client
 
 # Editor directories and files
 .vscode/*
